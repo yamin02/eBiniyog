@@ -1,36 +1,58 @@
+function toggleForm(formId) {
 
-const firebaseConfig = {
-    apiKey: "AIzaSyA7s96Hoz3DJt8IsbwY27QXPJM-uNxxgv0",
-    authDomain: "ebiniyog-yamin.firebaseapp.com",
-    projectId: "ebiniyog-yamin",
-    storageBucket: "ebiniyog-yamin.appspot.com",
-    messagingSenderId: "1045006862883",
-    appId: "1:1045006862883:web:cdcec203983add0bacff96",
-    measurementId: "G-00PFG6BJZ1"
-};
+    const form = document.getElementById(formId);
 
-firebase.initializeApp(firebaseConfig);
-const auth = firebase.auth();
+    if (form.style.display === 'block') {
 
-const googleSignInBtn = document.getElementById('googleSignInBtn');
+        form.style.display = 'none';
 
-googleSignInBtn.addEventListener('click', async () => {
-try {
-// Create a Google provider object
-const provider = new firebase.auth.GoogleAuthProvider();
+    } else {
 
-// Initiate Google sign-in flow
-const result = await auth.signInWithPopup(provider);
+        form.style.display = 'block';
 
-// Handle successful sign-in
-const user = result.user;
-console.log('Logged in user:', user);
+    }
 
-// You can redirect to a different page after successful login
-// window.location.href = '/dashboard';
-
-} catch (error) {
-console.error('Login error:', error);
-// Handle errors, e.g., display an error message to the user
 }
-});
+
+function updateProfileImage(event) {
+
+    const input = event.target;
+
+    if (input.files && input.files[0]) {
+
+        const reader = new FileReader();
+
+        reader.onload = function(e) {
+
+            document.querySelector('.profile-image').src = e.target.result;
+
+        };
+
+        reader.readAsDataURL(input.files[0]);
+
+    }
+
+}
+
+
+
+
+function toggleForm(formId) {
+    const $form = $('#' + formId);
+    if ($form.css('display') === 'block') {
+        $form.css('display', 'none');
+    } else {
+        $form.css('display', 'block');
+    }
+}
+
+function updateProfileImage(event) {
+    const $input = $(event.target);
+    if ($input[0].files && $input[0].files[0]) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+            $('.profile-image').attr('src', e.target.result);
+        };
+        reader.readAsDataURL($input[0].files[0]);
+    }
+}

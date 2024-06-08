@@ -4,7 +4,7 @@ var mainpage =require("./pages/mainpage")
 var tweet = require("./pages/forum")
 var stocks = require('./pages/stock');
 var eachmf = require("./pages/eachmf");
-import { loginAuth } from "./pages/login";
+import { dashboard, loginAuth } from "./pages/login";
 
 
 const screenurl = {
@@ -13,7 +13,8 @@ const screenurl = {
   '/stocks' : stocks.tableReal ,
   '/forum' :  tweet.forum , 
   '/eachmf': eachmf.infotab ,
-  '/login' : loginAuth 
+  '/login' : loginAuth ,
+  '/dashboard' : dashboard
 }
 
 

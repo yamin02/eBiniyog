@@ -1,4 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
 body {
+
+    font-family: 'Roboto', sans-serif;
+
+    background-color: #F5F5F5;
+
+    margin: 0;
 
     display: flex;
 
@@ -8,177 +16,345 @@ body {
 
     height: 100vh;
 
-    margin: 0;
+}
 
-    /* font-family: Arial, sans-serif; */
+.profile-container {
 
     background-color: #18212a;
-
-}
-
-.login-container {
-    font-family: "Be Vietnam Pro", sans-serif;
-    text-align: center;
-    background: #18212a;
-    /* border: 2px solid white; */
     color: white;
-    padding: 2rem;
-    border-radius: 13px;
-    box-shadow: 0 0 10px rgba(244, 242, 242, 0.237);
 
-}
+    width: 100%;
+    height: 100%;
 
-.login-logo {
+    border-radius: 15px;
+
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+    overflow: hidden;
+
     display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 1rem;
+
+    flex-direction: column;
+
 }
 
-.login-logo img {
+.navbar {
 
-    width: 60px;
-    height: 60px;
+    display: flex;
+
+    align-items: center;
+
+    padding: 15px;
+
+    /* background-color: #FFFFFF; */
+
+    border-bottom: 1px solid #eeeeee1c;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+}
+
+.navbar ion-icon {
+
     margin-right: 10px;
 
-}
-
-.login-logo span {
-
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: white;
+    font-size: 20px;
 
 }
 
-.login-subtitle {
+.profile-header {
 
-    margin-bottom: 40px;
-    font-size: 1.1rem;
-    color: #d0cfcf;
-
-}
-
-
-
-.login-terms {
-
-    font-size: 0.9rem;
-    margin-top: 25px;
-    color: #888;
-
-}
-
-.login-terms a {
-
-    color: #2e77d0;
-    text-decoration: none;
-
-}
-
-
-
-.gsi-material-button {
-    -moz-user-select: none;
-    -webkit-user-select: none;
-    -ms-user-select: none;
-    -webkit-appearance: none;
-    background-color: WHITE;
-    background-image: none;
-    border: 1px solid #747775;
-    -webkit-border-radius: 20px;
-    border-radius: 20px;
-    -webkit-box-sizing: border-box;
-    box-sizing: border-box;
-    color: #1f1f1f;
-    cursor: pointer;
-    font-family: 'Roboto', arial, sans-serif;
-    font-size: 14px;
-    height: 40px;
-    letter-spacing: 0.25px;
-    outline: none;
-    overflow: hidden;
-    padding: 0 12px;
-    position: relative;
-    text-align: center;
-    -webkit-transition: background-color .218s, border-color .218s, box-shadow .218s;
-    transition: background-color .218s, border-color .218s, box-shadow .218s;
-    vertical-align: middle;
-    white-space: nowrap;
-    width: auto;
-    max-width: 400px;
-    min-width: min-content;
-  }
-  
-  .gsi-material-button .gsi-material-button-icon {
-    height: 20px;
-    margin-right: 12px;
-    min-width: 20px;
-    width: 20px;
-  }
-  
-  .gsi-material-button .gsi-material-button-content-wrapper {
-    -webkit-align-items: center;
-    align-items: center;
     display: flex;
-    -webkit-flex-direction: row;
-    flex-direction: row;
-    -webkit-flex-wrap: nowrap;
-    flex-wrap: nowrap;
-    height: 100%;
-    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 20px;
+
+    /* background-color: #FFFFFF; */
+
+}
+
+.profile-image-wrapper {
+
     position: relative;
-    width: 100%;
-  }
-  
-  .gsi-material-button .gsi-material-button-contents {
-    -webkit-flex-grow: 1;
-    flex-grow: 1;
-    font-family: 'Roboto', arial, sans-serif;
-    font-weight: 500;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    vertical-align: top;
-  }
-  
-  .gsi-material-button .gsi-material-button-state {
-    -webkit-transition: opacity .218s;
-    transition: opacity .218s;
-    bottom: 0;
-    left: 0;
-    opacity: 0;
+
+}
+
+.profile-image {
+
+    width: 60px;
+    object-fit: cover;
+
+    height: 60px;
+
+    border-radius: 50%;
+
+}
+
+#profile-image-input {
+
     position: absolute;
-    right: 0;
+
     top: 0;
-  }
-  
-  .gsi-material-button:disabled {
-    cursor: default;
-    background-color: #ffffff61;
-    border-color: #1f1f1f1f;
-  }
-  
-  .gsi-material-button:disabled .gsi-material-button-contents {
-    opacity: 38%;
-  }
-  
-  .gsi-material-button:disabled .gsi-material-button-icon {
-    opacity: 38%;
-  }
-  
-  .gsi-material-button:not(:disabled):active .gsi-material-button-state, 
-  .gsi-material-button:not(:disabled):focus .gsi-material-button-state {
-    background-color: #303030;
-    opacity: 12%;
-  }
-  
-  .gsi-material-button:not(:disabled):hover {
-    -webkit-box-shadow: 0 1px 2px 0 rgba(60, 64, 67, .30), 0 1px 3px 1px rgba(60, 64, 67, .15);
-    box-shadow: 0 1px 2px 0 rgba(60, 64, 67, .30), 0 1px 3px 1px rgba(60, 64, 67, .15);
-  }
-  
-  .gsi-material-button:not(:disabled):hover .gsi-material-button-state {
-    background-color: #303030;
-    opacity: 8%;
-  }
-  
+
+    left: 0;
+
+    opacity: 0;
+
+    width: 60px;
+
+    height: 60px;
+
+    cursor: pointer;
+
+}
+
+.profile-info {
+
+    display: flex;
+
+    flex-direction: column;
+
+    margin-left: 20px;
+
+}
+
+.profile-info h1 {
+
+    margin: 0;
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+}
+
+.designation {
+
+    margin: 7px 0;
+
+    font-size: 12px;
+
+    color: #666666;
+
+}
+
+.status {
+
+    color: #c11700;
+    background-color: #c1170034;
+    width: fit-content;
+
+    border-radius: 12px;
+
+    padding: 7px 12px;
+
+    font-size: 12px;
+
+    display: inline-block;
+
+}
+
+.profile-stats {
+
+    display: flex;
+
+    justify-content: space-around;
+
+    padding: 30px 10px;
+}
+
+.stat-item {
+
+    text-align: center;
+
+
+}
+
+.stat-number {
+
+    margin: 0;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+}
+
+.stat-label {
+
+    margin: 5px 0 0 0;
+
+    font-size: 10px;
+
+    color: #717171;
+
+}
+
+.profile-menu {
+    flex: 1;
+
+}
+
+.menu-item {
+
+    display: flex;
+
+    align-items: center;
+
+    padding: 24px 20px;
+
+    cursor: pointer;
+
+    border-bottom: 1px solid #eeeeee1b;
+
+    position: relative;
+
+}
+
+.menu-icon {
+
+    margin-right: 20px;
+
+    font-size: 20px;
+
+}
+
+.verified-icon {
+
+    color: rgba(137, 4, 4, 0.673);
+
+    font-size: 16px;
+
+    position: absolute;
+
+    right: 20px;
+
+}
+
+.menu-item p {
+
+    margin: 0;
+
+    font-size: 17px;
+
+}
+
+.collapsible-content {
+
+    display: none;
+
+    padding: 15px 20px;
+
+    border-bottom: 1px solid #eeeeee1e;
+
+}
+
+.collapsible-content form {
+
+    display: flex;
+
+    flex-direction: column;
+
+}
+
+.collapsible-content form label {
+
+    margin-top: 10px;
+
+}
+
+.collapsible-content form input {
+
+    padding: 5px;
+
+    margin-top: 5px;
+
+}
+
+.collapsible-content form button {
+
+    margin-top: 10px;
+
+    padding: 10px;
+
+    background-color: #00ACC1;
+
+    color: #FFFFFF;
+
+    border: none;
+
+    border-radius: 5px;
+
+    cursor: pointer;
+
+}
+
+.spacer {
+
+    flex: 1; /* Fills the remaining space */
+
+}
+
+.logout {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    color: #E53935;
+
+    text-align: center;
+
+    padding: 15px 0;
+
+    cursor: pointer;
+
+}
+
+.logout ion-icon {
+
+    margin-right: 10px;
+
+    font-size: 20px;
+
+}
+
+.logout p {
+
+    margin: 0;
+
+    font-size: 14px;
+
+}
+
+.version {
+
+    text-align: center;
+
+    padding: 10px 0;
+
+    color: #AAAAAA;
+
+    font-size: 12px;
+
+}
+
+
+
+
+.add-image-icon{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    font-size: 13px;
+    color: white;
+    background-color: blue;
+    border-radius: 50%;
+    padding: 5px;
+    cursor: pointer;
+}

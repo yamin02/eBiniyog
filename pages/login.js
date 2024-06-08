@@ -1,3 +1,4 @@
+const firebaseConfigjson = require('../firebaseConfig.json')
 
 module.exports.loginAuth =  {
     repeatRend : async () => { } ,
@@ -5,16 +6,7 @@ module.exports.loginAuth =  {
     afterRend : async () =>  
     {
 
-      const firebaseConfig = {
-        apiKey: "AIzaSyA7s96Hoz3DJt8IsbwY27QXPJM-uNxxgv0",
-        authDomain: "ebiniyog-yamin.firebaseapp.com",
-        projectId: "ebiniyog-yamin",
-        storageBucket: "ebiniyog-yamin.appspot.com",
-        messagingSenderId: "1045006862883",
-        appId: "1:1045006862883:web:cdcec203983add0bacff96",
-        measurementId: "G-00PFG6BJZ1"
-    };
-    
+    const firebaseConfig = firebaseConfigjson;
     firebase.initializeApp(firebaseConfig);
     const auth = firebase.auth();
       
@@ -29,9 +21,10 @@ module.exports.loginAuth =  {
             // Handle successful sign-in
             const user = result.user;
             console.log('Logged in user:', user);
+            localStorage.setItem('user',JSON.stringify(user));
       
             // You can redirect to a different page after successful login
-            // window.location.href = '/dashboard';
+            // window.location.href = '/#/home';
       
           } catch (error) {
             console.error('Login error:', error);
@@ -77,4 +70,117 @@ module.exports.loginAuth =  {
 
 
 
+module.exports.dashboard = {
+  afterRend : async => {
 
+    function toggleForm(formId) {
+      const $form = $('#' + formId);
+      if ($form.css('display') === 'block') {
+          $form.css('display', 'none');
+      } else {
+          $form.css('display', 'block');
+      }
+    }
+
+    function updateProfileImage(event) {
+      const $input = $(event.target);
+      if ($input[0].files && $input[0].files[0]) {
+          const reader = new FileReader();
+          reader.onload = function(e) {
+              $('.profile-image').attr('src', e.target.result);
+          };
+          reader.readAsDataURL($input[0].files[0]);
+      }
+  }
+  },
+
+  rend : async => {
+      $("#contents").html(`
+      <div class="profile-container">
+          <div class="profile-header">
+              <div class="profile-image-wrapper">
+                  <img src="https://via.placeholder.com/100" alt="Profile Picture" class="profile-image">
+                  <input type="file" id="profile-image-input" accept="image/*" capture="camera" onchange="updateProfileImage(event)">
+                  <ion-icon name="camera-outline" class="add-image-icon"></ion-icon>
+  
+              </div>
+              <div class="profile-info">
+                  <h1>Yaminul Hoque</h1>
+                  <p class="designation">yaminulhoque@gmail.com</p>
+                  <span class="status">Not Verified</span>
+              </div>
+          </div>
+          <div class="profile-stats">
+              <div class="stat-item">
+                  <p class="stat-number">৳ 970000</p>
+                  <p class="stat-label">Invested</p>
+              </div>
+              <div class="stat-item">
+                  <p class="stat-number">৳ 7500000</p>
+                  <p class="stat-label">Current Value</p>
+              </div>
+              <div class="stat-item">
+                  <p class="stat-number">63%</p>
+                  <p class="stat-label">Percent Change</p>
+              </div>
+          </div>
+          <div class="profile-menu">
+              <div class="menu-item" onclick="toggleForm('notifications-form')">
+                  <ion-icon name="notifications-outline" class="menu-icon" style="color: #40C4FF;"></ion-icon>
+                  <p>Last Purchase</p>
+                  <ion-icon name="checkmark-circle" class="verified-icon"></ion-icon>
+              </div>
+
+              <div id="notifications-form" class="collapsible-content">
+                  <form>
+                      <label for="email-notifications">Email Notifications:</label>
+                      <input type="checkbox" id="email-notifications" name="email-notifications"><br>
+                      <label for="sms-notifications">SMS Notifications:</label>
+                      <input type="checkbox" id="sms-notifications" name="sms-notifications"><br>
+                      <button type="submit">Save</button>
+                  </form>
+              </div>
+              <div class="menu-item" onclick="toggleForm('plan-details-form')">
+                  <ion-icon name="calendar-outline" class="menu-icon" style="color: #FF7043;"></ion-icon>
+                  <p>NID verification</p>
+                  <ion-icon name="checkmark-circle" class="verified-icon"></ion-icon>
+              </div>
+              <div id="plan-details-form" class="collapsible-content">
+                  <form>
+                      <label for="name">Name:</label>
+                      <input type="text" id="name" name="name"><br>
+                      <label for="address">Address:</label>
+                      <input type="text" id="address" name="address"><br>
+                      <label for="mobile">Mobile Number:</label>
+                      <input type="text" id="mobile" name="mobile"><br>
+                      <button type="submit">Submit</button>
+                  </form>
+              </div>
+              <div class="menu-item" onclick="toggleForm('privacy-policy-form')">
+                  <ion-icon name="lock-closed-outline" class="menu-icon" style="color: #66BB6A;"></ion-icon>
+                  <p>Add Bank Account</p>
+                  <ion-icon name="checkmark-circle" class="verified-icon"></ion-icon>
+              </div>
+              <div id="privacy-policy-form" class="collapsible-content">
+                  <p>Your privacy is important to us...</p>
+              </div>
+              <div class="menu-item" onclick="toggleForm('terms-service-form')">
+                  <ion-icon name="document-text-outline" class="menu-icon" style="color: #7E57C2;"></ion-icon>
+                  <p>Add BO Account</p>
+                  <ion-icon name="checkmark-circle" class="verified-icon"></ion-icon>
+              </div>
+              <div id="terms-service-form" class="collapsible-content">
+                  <p>By using this service, you agree to...</p>
+              </div>
+          </div>
+          <div class="spacer"></div>
+          <div class="logout">
+              <ion-icon name="log-out-outline"></ion-icon>
+              <p>Logout</p>
+          </div>
+          <div class="version">
+              <p>Version 1.0.0</p>
+          </div>
+      </div>`)
+  }
+}

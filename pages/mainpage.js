@@ -123,13 +123,8 @@ module.exports.infotab =  {
         }
     },
 
-    rend : async () => 
-{
-    $("#BottomSlider").show();
-
-    $(".nav-two a").removeClass("navactive");
-    $(".fa-house-user").addClass("navactive");
-    
+    rend : async () => {
+    $("#TopNavs").css('display', "block");    
     $("#contents").html(`
     <div id="stocklist"></div>`)
   }
