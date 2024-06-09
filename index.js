@@ -1,15 +1,15 @@
 var utils = require('./functions/utils');
 
-var mainpage =require("./pages/mainpage")
 var tweet = require("./pages/forum")
 var stocks = require('./pages/stock');
 var eachmf = require("./pages/eachmf");
-import { dashboard, loginAuth } from "./pages/login";
+import { HomePage } from "./pages/home";
+import { dashboard, loginAuth } from "./pages/dashboard";
 
 
 const screenurl = {
-  '/' : mainpage.infotab ,
-  '/home' :  mainpage.infotab ,
+  '/' : HomePage,
+  '/home' :  HomePage ,
   '/stocks' : stocks.tableReal ,
   '/forum' :  tweet.forum , 
   '/eachmf': eachmf.infotab ,

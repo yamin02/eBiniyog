@@ -5,7 +5,7 @@ module.exports.infotab =  {
     afterRend : async (data0) =>  
     {  
         $(document).ready(function() {
-            const ctx = $('#myChart')[0].getContext('2d');
+            const ctx = $('#mf-myChart')[0].getContext('2d');
             const chartData = {
                 '3M': Array.from({length: 12}, () => Math.floor(Math.random() * 100)),
                 '6M': Array.from({length: 12}, () => Math.floor(Math.random() * 100)),
@@ -61,7 +61,7 @@ module.exports.infotab =  {
                 }
             });
         
-            $('.nav button').on('click', function() {
+            $('.mf-nav button').on('click', function() {
                 $('.nav button.active').removeClass('active');
                 $(this).addClass('active');
                 currentPeriod = $(this).data('period');
@@ -69,7 +69,7 @@ module.exports.infotab =  {
                 myChart.update();
             });
         
-            $('#cagr-period').on('change', function() {
+            $('#mf-cagr-period').on('change', function() {
                 const selectedPeriod = $(this).val();
                 $('#cagr-value').text(cagrValues[selectedPeriod]);
             });
@@ -98,41 +98,41 @@ module.exports.infotab =  {
     $(".nav-two a").removeClass("navactive");
     $(".fa-house-user").addClass("navactive");
 
-    $("#contents").html(`<div class="container">
-    <div class="header">
+    $("#contents").html(`<div class="mf-container">
+    <div class="mf-header">
         <img src="https://ucbstock.com.bd/wp-content/uploads/2020/11/cropped-ucbsbl_logo.png" alt="Logo">
         <h1>UCB AML FIRST MUTUAL FUND</h1>
     </div>
-    <div class="sub-header">Direct | Growth | Equity - ELSS</div>
-    <div class="main-content">
-        <div class="details">
-            <div class="nav-title">Current NAV (24th May 2024)</div>
-            <div class="price">৳ 60.33</div>
-            <div class="change">-0.13%</div>
+    <div class="mf-sub-header">Direct | Growth | Equity - ELSS</div>
+    <div class="mf-main-content">
+        <div class="mf-details">
+            <div class="mf-nav-title">Current NAV (24th May 2024)</div>
+            <div class="mf-price">৳ 60.33</div>
+            <div class="mf-change">-0.13%</div>
             <br>
-            <div class="row">
-                <div class="item">CAGR 
-                    <select id="cagr-period">
+            <div class="mf-row">
+                <div class="mf-item">CAGR 
+                    <select id="mf-cagr-period">
                         <option value="3">3 Years</option>
                         <option value="4">4 Years</option>
                         <option value="5" selected>5 Years</option>
                     </select>
-                    <span id="cagr-value">+12.65%</span>
+                    <span id="mf-cagr-value">+12.65%</span>
                 </div>
-                <div class="item">Min. investment<span>₹500.0</span></div>
+                <div class="mf-item">Min. investment<span>₹500.0</span></div>
             </div>
-            <div class="row">
-                <div class="item">Exit load <a class="fas fa-info-circle" data-info="exit-load"></a>
+            <div class="mf-row">
+                <div class="mf-item">Exit load <a class="fas fa-info-circle" data-info="exit-load"></a>
                 <span>0.0%</span> </div>
-                <div class="item">Expense ratio <a class="fas fa-info-circle" data-info="expense-ratio"></a>
+                <div class="mf-item">Expense ratio <a class="fas fa-info-circle" data-info="expense-ratio"></a>
                 <span>0.91%</span> </div>
             </div>
-            <button class="login">Login to invest</button>
+            <button class="mf-login">Login to invest</button>
         </div>
-        <div class="chart-container">
-            <canvas id="myChart" class="chart"></canvas>
-            <div class="nav">
-                <button data-period="3M" class="active">3M</button>
+        <div class="mf-chart-container">
+            <canvas id="mf-myChart" class="mf-chart"></canvas>
+            <div class="mf-nav">
+                <button data-period="3M" class="mf-active">3M</button>
                 <button data-period="6M">6M</button>
                 <button data-period="1Y">1Y</button>
                 <button data-period="2Y">2Y</button>

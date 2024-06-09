@@ -1,7 +1,7 @@
 var utils = require('../functions/utils');
 
 //<div data-tf-live="01HTQPX2J1G2949SDM3MKFNRF5"></div><script src="//embed.typeform.com/next/embed.js"></script>           
-module.exports.infotab =  {
+module.exports.HomePage =  {
     repeatRend : async () => { } ,
     
     afterRend : async (data0) =>  
@@ -124,7 +124,8 @@ module.exports.infotab =  {
     },
 
     rend : async () => {
-    $("#TopNavs").css('display', "block");    
+    utils.topNavSet('home',"eBiniyog")
+    // $("#TopNavs").css('display', "block");    
     $("#contents").html(`
     <div id="stocklist"></div>`)
   }

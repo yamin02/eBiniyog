@@ -1,4 +1,5 @@
-const firebaseConfigjson = require('../firebaseConfig.json')
+const firebaseConfigjson = require('../firebaseConfig.json');
+const { topNavSet } = require('../functions/utils');
 
 module.exports.loginAuth =  {
     repeatRend : async () => { } ,
@@ -24,7 +25,7 @@ module.exports.loginAuth =  {
             localStorage.setItem('user',JSON.stringify(user));
       
             // You can redirect to a different page after successful login
-            // window.location.href = '/#/home';
+            window.location.href = '/#/dashboard';
       
           } catch (error) {
             console.error('Login error:', error);
@@ -36,7 +37,8 @@ module.exports.loginAuth =  {
 
     rend : async () => 
     {
-        $("#TopNavs").css('display', "none");
+        topNavSet('back','Login')
+        // $("#TopNavs").css('display', "none");
         $("#contents").html(`    
         <div class="login-container">
         <div class="login-logo">
@@ -82,31 +84,35 @@ module.exports.dashboard = {
       }
     }
 
-    function updateProfileImage(event) {
-      const $input = $(event.target);
-      if ($input[0].files && $input[0].files[0]) {
-          const reader = new FileReader();
-          reader.onload = function(e) {
-              $('.profile-image').attr('src', e.target.result);
-          };
-          reader.readAsDataURL($input[0].files[0]);
-      }
-  }
+    $("#profile-image-input").on('change',function (event) { 
+        const $input = $(event.target);
+        if ($input[0].files && $input[0].files[0]) {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                $('.profile-image').attr('src', e.target.result);
+            };
+            reader.readAsDataURL($input[0].files[0]);
+        }
+        
+    });
   },
 
   rend : async => {
+    (localStorage["user"]) ? '' : window.location.href  = '/#/login' ; 
+    topNavSet('back', 'Profile')
+
       $("#contents").html(`
       <div class="profile-container">
           <div class="profile-header">
               <div class="profile-image-wrapper">
                   <img src="https://via.placeholder.com/100" alt="Profile Picture" class="profile-image">
-                  <input type="file" id="profile-image-input" accept="image/*" capture="camera" onchange="updateProfileImage(event)">
+                  <input type="file" id="profile-image-input" accept="image/*" capture="camera">
                   <ion-icon name="camera-outline" class="add-image-icon"></ion-icon>
   
               </div>
               <div class="profile-info">
-                  <h1>Yaminul Hoque</h1>
-                  <p class="designation">yaminulhoque@gmail.com</p>
+                  <h1>${JSON.parse(localStorage["user"]).displayName}</h1>
+                  <p class="designation">${JSON.parse(localStorage["user"]).email}</p>
                   <span class="status">Not Verified</span>
               </div>
           </div>

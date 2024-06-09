@@ -37,3 +37,22 @@ module.exports.removeZero = function(priceArray){
         return priceArray
     }
 }
+
+
+
+module.exports.topNavSet = function(logoORback , pagename) {
+    const icon = (logoORback =='back') ? '<ion-icon name="arrow-back-outline">' : '<img src="./resource/apple-icon.png" style="width: 30px;">'
+    const profilePic_link = (localStorage["user"]) ? JSON.parse(localStorage["user"]).photoURL : 'https://img.freepik.com/free-psd/3d-illustration-person-with-sunglasses_23-2149436188.jpg'
+    $("#TopNavs").html(`
+        <nav class="topnav nav-one">
+        <a href="/#/home"> 
+            ${icon}
+        </a>
+        <a id="page-name">${pagename}</a>
+        <a href="#/dashboard">
+            <div class="profile-info">
+              <img src=${profilePic_link} alt="Profile Picture">
+          </div>
+        </a>
+    </nav>`)
+}
