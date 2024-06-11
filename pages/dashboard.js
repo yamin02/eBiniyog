@@ -1,5 +1,7 @@
 const firebaseConfigjson = require('../firebaseConfig.json');
 const { topNavSet } = require('../functions/utils');
+firebase.initializeApp(firebaseConfigjson);
+
 
 module.exports.loginAuth =  {
     repeatRend : async () => { } ,
@@ -7,9 +9,9 @@ module.exports.loginAuth =  {
     afterRend : async () =>  
     {
 
-    const firebaseConfig = firebaseConfigjson;
-    firebase.initializeApp(firebaseConfig);
-    const auth = firebase.auth();
+    // const firebaseConfig = firebaseConfigjson;
+    // firebase.initializeApp(firebaseConfig);
+    const auth = firebase.auth(); 
       
         $('#googleSignInBtn').on('click', async function() {
           try {
@@ -75,14 +77,10 @@ module.exports.loginAuth =  {
 module.exports.dashboard = {
   afterRend : async => {
 
-    function toggleForm(formId) {
-      const $form = $('#' + formId);
-      if ($form.css('display') === 'block') {
-          $form.css('display', 'none');
-      } else {
-          $form.css('display', 'block');
-      }
-    }
+    $('.logout').on('click',()=>{
+        localStorage.removeItem("user");
+        location.href = "/#/home"
+    })
 
     $("#profile-image-input").on('change',function (event) { 
         const $input = $(event.target);
@@ -179,6 +177,18 @@ module.exports.dashboard = {
                   <p>By using this service, you agree to...</p>
               </div>
           </div>
+
+          <script> 
+              function toggleForm(formId) {
+                const $form = $('#' + formId);
+                if ($form.css('display') === 'block') {
+                    $form.css('display', 'none');
+                } else {
+                    $form.css('display', 'block');
+                }
+               }
+          </script>
+
           <div class="spacer"></div>
           <div class="logout">
               <ion-icon name="log-out-outline"></ion-icon>

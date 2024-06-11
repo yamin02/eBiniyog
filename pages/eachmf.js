@@ -1,3 +1,4 @@
+const { topNavSet } = require("../functions/utils");
 
 module.exports.infotab =  {
     repeatRend : async () => { } ,
@@ -92,6 +93,8 @@ module.exports.infotab =  {
     },
 
     rend : async () => {
+
+        topNavSet('back',"Fund Info")
 
     $("#BottomSlider").show();
 

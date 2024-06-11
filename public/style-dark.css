@@ -595,7 +595,7 @@ body {
   margin-bottom: 10px;
 }
 
-.mf-details .price {
+.mf-details .mf-price {
   font-size: 24px;
   color: #ff5733;
   font-weight: 700;
@@ -758,7 +758,6 @@ body {
 }
 
 
-g
 /* This is for the login Page */
 .login-container {
   font-family: "Be Vietnam Pro", sans-serif;
@@ -959,6 +958,7 @@ g
 }
 
 .profile-image {
+    object-fit: cover;
     width: 60px;
     height: 60px;
     border-radius: 50%;

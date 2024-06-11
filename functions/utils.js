@@ -56,3 +56,5 @@ module.exports.topNavSet = function(logoORback , pagename) {
         </a>
     </nav>`)
 }
+
+
