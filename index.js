@@ -5,6 +5,7 @@ var stocks = require('./pages/stock');
 var eachmf = require("./pages/eachmf");
 import { HomePage } from "./pages/home";
 import { dashboard, loginAuth } from "./pages/dashboard";
+import { landing } from "./pages/desktopScreen";
 
 
 const screenurl = {
@@ -14,7 +15,8 @@ const screenurl = {
   '/forum' :  tweet.forum , 
   '/eachmf': eachmf.infotab ,
   '/login' : loginAuth ,
-  '/dashboard' : dashboard
+  '/dashboard' : dashboard,
+  '/landing' : landing,
 }
 
 

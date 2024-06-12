@@ -94,12 +94,7 @@ module.exports.infotab =  {
 
     rend : async () => {
 
-        topNavSet('back',"Fund Info")
-
-    $("#BottomSlider").show();
-
-    $(".nav-two a").removeClass("navactive");
-    $(".fa-house-user").addClass("navactive");
+    topNavSet('back',"Fund Info") ;
 
     $("#contents").html(`<div class="mf-container">
     <div class="mf-header">

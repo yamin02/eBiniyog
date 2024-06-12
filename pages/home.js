@@ -124,6 +124,7 @@ module.exports.HomePage =  {
     },
 
     rend : async () => {
+    (window.screen.width > 550) ? location.href="/#/landing" : ''  
     utils.topNavSet('home',"eBiniyog")
     // $("#TopNavs").css('display', "block");    
     $("#contents").html(`
