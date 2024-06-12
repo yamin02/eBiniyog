@@ -39,7 +39,7 @@ module.exports.landing =  {
         <div class="desktop-screen-footer-container">
             <div class="desktop-screen-footer-left">
                 <img src="./resource/apple-icon.png" style="width: 30px;" alt="Your Brand Logo" class="desktop-screen-footer-logo"> <br>
-                <p>TRADING is a next-generation trading platform powered by NBL Securities Ltd. that allows users to understand, analyze, and seize investment opportunities in the Bangladeshi stock market and maximize their wealth.</p>
+                <p>eBiniyog is one stop solution for all kinds of investment opportutnities. One app and thousands of investmnet schemes. Mutual funds, stocks, FDR, REIT, Gold. The app allows users to understand, analyze, and seize investment opportunities in the Bangladeshi mutual fund market and maximize their wealth.</p>
                 <p>&copy; 2024 Easy Biniyog Ltd.</p>
             </div>
             <div class="desktop-screen-footer-middle">
