@@ -1,67 +1,118 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Landing Page</title>
+
+    <title>Mutual Funds App</title>
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
     <link rel="stylesheet" href="prac.css">
+
+
 </head>
+
 <body>
-    <header class="desktop-screen-header">
-        <div class="desktop-screen-container">
-            <img src="./public/resource/apple-icon.png" style="width: 40px;"> <h2 class="desktop-screen-logo">eBiniyog</h2>
-            <nav class="desktop-screen-nav">
-                <ul class="desktop-screen-nav-list">
-                    <li><a href="#offer">What we offer</a></li>
-                    <li><a href="#explore">Explore</a></li>
-                    <li><a href="#learn">Learn</a></li>
-                </ul>
-            </nav>
-            <a href="#signup" class="desktop-screen-signup-button">Sign-Up</a>
-        </div>
-    </header>
-    <section class="desktop-screen-hero">
-        <div class="desktop-screen-hero-content">
-            <h2>Start Trading with <span class="desktop-screen-highlight">More Speed</span></h2>
-            <p>Trek is the one-stop solution to all your trading needs. Open BO A/C, trade online, deposit & withdraw money - anytime, anywhere.</p>
-            <div class="desktop-screen-app-buttons">
-                <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Download_on_the_App_Store_Badge.svg/2560px-Download_on_the_App_Store_Badge.svg.png" alt="App Store" class="desktop-screen-store-button"></a>
-                <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Google_Play_Store_badge_EN.svg/2560px-Google_Play_Store_badge_EN.svg.png" alt="Google Play" class="desktop-screen-store-button"></a>
+    <div class="explore-container">
+        <header class="explore-header">
+            <h1>Explore</h1>
+            <p>Explore top funds by category</p>
+            <div class="search-bar">
+                <ion-icon name="search-outline">Life</ion-icon>
+                <input type="text" placeholder="Search 3000+ mutual funds">
             </div>
-            <div class="desktop-screen-mobile-image">
-                <img src="https://trek.com.bd/hero-section/hero-mobile-icon.png" alt="Mobile App">
-            </div>
-        </div>
-    </section>
-    <footer class="desktop-screen-footer">
-        <div class="desktop-screen-footer-container">
-            <div class="desktop-screen-footer-left">
-                <img src="./public/resource/apple-icon.png" style="width: 30px;" alt="Your Brand Logo" class="desktop-screen-footer-logo"> <br>
-                <p>TRADING is a next-generation trading platform powered by NBL Securities Ltd. that allows users to understand, analyze, and seize investment opportunities in the Bangladeshi stock market and maximize their wealth.</p>
-                <p>&copy; 2024 Easy Biniyog Ltd.</p>
-            </div>
-            <div class="desktop-screen-footer-middle">
-                <h3>Connect</h3>
-                <ul>
-                    <li><a href="#">Facebook</a></li>
-                    <li><a href="#">Instagram</a></li>
-                    <li><a href="#">LinkedIn</a></li>
-                    <li><a href="#">YouTube</a></li>
-                </ul>
-            </div>
-            <div class="desktop-screen-footer-right">
-                <h3>Powered by</h3>
-                <img src="https://trek.com.bd/hero-section/hero-mobile-icon.png" alt="NBL Securities Ltd. Logo" class="desktop-screen-powered-by-logo">
-                <address>
-                    RISE Incubation Center, (2nd Floor), Azimpur Road, Dhaka-1000. <br>Email: info@ebiniyog.net
-                </address>
-                <h3>Get the app</h3>
-                <div class="desktop-screen-app-buttons">
-                    <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Download_on_the_App_Store_Badge.svg/2560px-Download_on_the_App_Store_Badge.svg.png" alt="App Store" class="desktop-screen-store-button"></a>
-                    <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Google_Play_Store_badge_EN.svg/2560px-Google_Play_Store_badge_EN.svg.png" alt="Google Play" class="desktop-screen-store-button"></a>
+        </header>
+
+        <section class="explore-content">
+            <div class="explore-card">
+                <span class="explore-icon">
+                    <ion-icon name="bar-chart-outline" style="color: darkgoldenrod;"></ion-icon>
+                </span>                
+                <div>
+                    <h2>Ongoing NFOs</h2>
+                    <p>Explore open new fund offerings</p>
                 </div>
             </div>
+            <div class="explore-card">
+                <span class="explore-icon">
+                    <ion-icon name="calculator-outline" style="color:gold"></ion-icon>
+                </span>
+                <div>
+                    <h2>Save taxes</h2>
+                    <p>Build wealth and save taxes</p>
+                </div>
+            </div>
+            <div class="explore-card">
+                <span class="explore-icon">
+                    <ion-icon name="cash-outline" style="color: darkseagreen;"></ion-icon>
+                </span>
+                <div>
+                    <h2>Low-cost index funds</h2>
+                    <p>Long term wealth creation at low cost</p>
+                </div>
+            </div>
+            <div class="explore-card">
+                <span class="explore-icon">
+                    <ion-icon name="flame-outline" style="color:darkkhaki;"></ion-icon>
+                </span>
+                <div>
+                    <h2>Smart beta</h2>
+                    <p>Hybrid of active and passive</p>
+                </div>
+            </div>
+            <div class="explore-card">
+                <span class="explore-icon">
+                    <ion-icon name="shapes-outline" style="color: bisque;"></ion-icon>
+                </span>
+                <div>
+                    <h2>Equity + Debt</h2>
+                    <p>Stable growth</p>
+                </div>
+            </div>
+            <div class="explore-card">
+                <span class="explore-icon">
+                    <ion-icon name="wallet-outline" style="color: cadetblue;"></ion-icon>
+                </span>
+                <div>
+                    <h2>Alternatives to bank FDs</h2>
+                    <p>Tax efficient; better returns than FDs</p>
+                </div>
+            </div>
+            <div class="video-section-container">
+                <div class="video-section">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRD6pBWgIPmztIjZKF1WVXRfQaV-QPrJCZULweuhJST1cgvtcaqAMeT6x43&s=10" alt="Basics of mutual funds">
+                    <div class="video-info">
+                        <h2>Basics of mutual funds</h2>
+                        <p>13 lessons on the basics of mutual funds that every investor must know</p>
+                    </div>
+                </div>
+                <div class="video-section">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRD6pBWgIPmztIjZKF1WVXRfQaV-QPrJCZULweuhJST1cgvtcaqAMeT6x43&s=10" alt="Basics of mutual funds">
+                    <div class="video-info">
+                        <h2>Basics of mutual funds</h2>
+                        <p>13 lessons on the basics of mutual funds that every investor must know</p>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+    </div>
+
+    <footer class="footer">
+
+        <div class="registration">
+            <p>eBiniyog</p>
+            <p>Trade Licence Registration: INZ000031633</p>
+            <a href="#">Terms & Conditions</a>
         </div>
+
     </footer>
+
 </body>
+
 </html>

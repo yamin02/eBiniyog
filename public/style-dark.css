@@ -51,7 +51,7 @@ body {
       width: 70px;
     }
  
-    #initials h2{
+    .home-page-login h2{
       padding-bottom: 10px ;
     }
 
@@ -66,10 +66,6 @@ body {
       color: white;
       border-bottom: 0.5px solid grey;
     }
-    #initials p{
-      color: rgb(207, 206, 206);
-    }
-
 
 
                               /* Contents */
@@ -155,101 +151,8 @@ body {
   }
   
 
-  /* This are for the charts in the stock page */
-  .chart {
-    margin: 0;
-    padding: 0;
-    /* width: 10%; */
-    font-family: monospace;
-    /* font-size: 10px; */
-    /* border: 1px solid violet;  */
-    padding: 7px;
-  }
-  .chart p {
-    margin: 0;
-  }
-  .strokegreen {
-    stroke: rgb(13, 163, 13);
-    fill: rgb(62, 193, 50) !important;
-  }
-  .strokered {
-    stroke: rgb(201, 50, 50);
-    fill: rgb(194, 106, 106) !important;
-  }
-  .strokeblue {
-    stroke: rgb(80, 80, 245);
-    fill: rgb(101, 109, 220) !important;
-  }
-  .ct-grid{
-    stroke :rgba(255, 255, 255, 0.06) !important ; 
-  }
-  .ct-label.ct-vertical.ct-start{
-    color: rgba(255, 255, 255, 0.582);
-    font-size: 7px;
-  }
-  .ct-area{
-    fill-opacity: 0.08 !important;
-  }
-  .ct-line {
-    stroke-width: 3px !important ;
-  }
-  #data p {
-    margin: 0;
-    font-weight: bold;
-  }
-  #data p:last-child {
-    font-size: 12px;
-  }
-  #data p:first-child {
-    color: white;
-    font-size: 17px;
-    border-radius: 14px;
-    /* background-color: rgb(243, 105, 101); */
-    padding: 6px 13px;
-  }
   
-  .red {
-    background-color: rgb(236, 52, 52);
-  }
-  
-  .green {
-    background-color: rgb(21, 175, 67);
-  }
-  
-  .blue {
-    background-color: rgb(81, 130, 235);
-  }
-  .red1 {
-    color: rgb(236, 52, 52);
-  }
-  
-  .green1 {
-    color: rgb(9, 122, 43);
-  }
-  
-  .blue1 {
-    color: rgb(81, 130, 235);
-  }
-  
-  /* This are for starred icon */
-  #icon .fa-star {
-    margin-left: 0;
-    margin-right: 0%;
-    color: rgb(248, 247, 247);
-  }
-  .checked {
-    color: orange !important;
-    text-shadow: none !important;
-  }
-  #icon {
-    margin: 0;
-    padding-left: 0;
-    /* border: 2px solid black; */
-    width: 20px;
-  }
-
-  
-  /*               LOading Overlay */
+  /*               Loading Overlay */
   .ct-chart {
     width: 90vw;
     max-width: 1100px;
@@ -346,7 +249,8 @@ body {
   padding: 1rem;
   border-radius: 2%;
   color: white;
-  background-color: #cbc9c916;
+  /* background-color: #cbc9c916; */
+  box-shadow: inset -1px 1px 20px 20px #00000040;
   margin: 6px !important;
   flex: 0 0 100%; /* Each tweet occupies the full width of the container */
   max-width: calc(100% - 50px);
@@ -384,43 +288,28 @@ body {
   transition: transform 0.3s; 
 }
 
-/* THis is main page Typeform */
-.typeform{
+/* THis is main page login div */
+.home-page-login{
   font-family: "Be Vietnam Pro", sans-serif;
   line-height: 230%;
   font-weight: 400;
   font-size: 12px;
   color: white;
-  border-bottom: 0.5px solid grey;
+  border-bottom: 0.3px solid rgba(128, 128, 128, 0.245);
   text-align: center ;
   line-height: 150% ;
   margin: 30px ;
   padding: 20px;
 }
-.typeform p{
+.home-page-login p{
   color: rgb(207, 206, 206);
-}
-#fin-advise-btn1{
-
-  display: inline-block;
-  outline: none;
-  cursor: pointer;
-  font-size: 16px;
-  line-height: 20px;
-  font-weight: 600;
-  border-radius: 8px;
-  padding: 14px 24px;
-  border: none;
-  transition: box-shadow 0.2s ease 0s, -ms-transform 0.1s ease 0s, -webkit-transform 0.1s ease 0s, transform 0.1s ease 0s;
-  background: linear-gradient(to right, rgb(40, 104, 22) 0%, rgb(52, 124, 27) 50%, rgb(69, 146, 14) 100%);
-  color: #fff;
 }
 
 #fin-advise-btn{
 
   display: inline-block;
   outline: none;
-  width: 190px;
+  width: 90px;
   margin-bottom: 10px;
   cursor: pointer;
   font-size: 16px;
@@ -431,22 +320,6 @@ body {
   border: none;
   transition: box-shadow 0.2s ease 0s, -ms-transform 0.1s ease 0s, -webkit-transform 0.1s ease 0s, transform 0.1s ease 0s;
   background: linear-gradient(to right, rgb(40, 104, 22) 0%, rgb(52, 124, 27) 50%, rgb(69, 146, 14) 100%);
-  color: #fff;
-}
-
-#close-typeform{
-  margin-top: 10px;
-  display: inline-block;
-  outline: none;
-  cursor: pointer;
-  font-size: 16px;
-  line-height: 20px;
-  font-weight: 600;
-  border-radius: 8px;
-  padding: 14px 24px;
-  border: none;
-  transition: box-shadow 0.2s ease 0s, -ms-transform 0.1s ease 0s, -webkit-transform 0.1s ease 0s, transform 0.1s ease 0s;
-  background: linear-gradient(to right, rgb(32, 34, 32) 0%, rgb(24, 26, 24) 50%, rgb(30, 31, 30) 100%);
   color: #fff;
 }
 
@@ -1135,7 +1008,6 @@ body {
 @media screen and (min-width: 550px){
   body 
   {
-    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -1315,5 +1187,182 @@ body {
     text-decoration: underline;
 }
 
+
+/* This is for the GOLD, FDR price lists in the HOME PAGE */
+
+.home-page-card {
+  font-family: "Be Vietnam Pro", sans-serif;
+  color: white !important;
+  padding: 10px;
+  font-weight: bold;
+  border-radius: 10px;
+  box-shadow: inset -1px -1px 90px 40px #00000040;
+  width: 250px;
+  margin-right: 12px;
+  text-align: left;
+}
+
+.home-page-revenue-title {
+  font-size: 16px;
+  padding-bottom: 12px;
+  padding-top: 10px;
+  color: rgb(239, 231, 12);
+}
+
+.home-page-revenue {
+  font-size: 20px;
+}
+
+.home-page-percentage {
+  color: rgb(15, 201, 15);
+  font-size: 13px;
+}
+
+.home-page-chart-container {
+  padding-top: 10px;
+  position: relative;
+  width: 100%;
+  height: 70px;
+  overflow: hidden;
+}
+
+.home-page-chart-overlay {
+  position: absolute;
+  margin: 0 !important;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+/* This is the explore Mutual fund in HOME PAGE */
+
+.explore-container {
+    background-color: #18212a;
+    font-family: "Be Vietnam Pro", sans-serif;
+    color: white;
+    max-width: 500px;
+    /* margin: auto; */
+    padding: 15px;
+    padding-top: 65px !important;
+}
+
+.explore-header {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.explore-header h1 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.explore-header p {
+    margin: 5px 0;
+    color: #777;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    background-color: #f0f0f0;
+    border-radius: 20px;
+    padding: 10px 15px;
+    box-shadow: inset 0 0 5px rgba(0,0,0,0.1);
+    margin-top: 10px;
+}
+
+.search-bar ion-icon {
+    color: #333;
+    font-size: 20px;
+    --ionicon-stroke-width: 76px;
+    margin-right: 10px;
+}
+
+.search-bar input {
+    border: none;
+    background: none;
+    outline: none;
+    width: calc(100% - 30px);
+    font-size: 16px;
+    color: #333;
+}
+
+.explore-card ion-icon {
+    font-size: 33px;
+    padding-right: 15px;
+}
+
+.explore-content .explore-card {
+    display: flex;
+    align-items: center;
+    background-color: #18212a;
+    margin: 10px 0;
+    padding-top: 25px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.explore-content .explore-card h2 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.explore-content .explore-card p {
+    margin: 5px 0 0;
+    color: #777;
+}
+
+.video-section-container {
+    display: flex;
+    overflow-x: scroll;
+}
+
+.video-section {
+    display: flex;
+    align-items: center;
+    background-color: #18212a;
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    min-width: 400px;
+    margin-right: 10px;
+}
+
+.video-section img {
+    max-width: 90px;
+    border-radius: 5px;
+    margin-right: 15px;
+}
+
+.video-info h2 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.video-info p {
+    margin: 5px 0 0;
+    color: #777;
+}
+
+.footer {
+    font-family: "Be Vietnam Pro", sans-serif;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.footer .registration {
+    font-size: 12px;
+    color: #777;
+}
+
+.footer .registration a {
+    text-decoration: none;
+}
 
 

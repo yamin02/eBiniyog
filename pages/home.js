@@ -7,8 +7,8 @@ module.exports.HomePage =  {
     afterRend : async (data0) =>  
     {
         
-        $("#stocklist").html(`<div class="main" id="initials">
-           
+        $("#stocklist").html(`
+    <div class="main" id="initials">   
         <div class="All-offers">
             <div class="offers">
                 <div class="tweet-image">
@@ -36,91 +36,169 @@ module.exports.HomePage =  {
             </div>
         </div>
 
-        <div class="typeform" id="typeforms">
+        <div class="home-page-login">
             <div>
                 <h2>Learn Earn and Grow </h2>
                 <p>Login to get access to thousands of resource</p>
                 <br>
-                <button id="fin-advise-btn">Login</button>
+                <a id="fin-advise-btn" href="/#/login">Login</a>
                 <br>
-                <p>Don't have an account ? Sign Up <a>Here</a></p> 
-
+                <p>Don't have an account ? Sign Up <a href="/#/login"><u>Here</u></a></p> 
             </div>
         </div>
 
+        <div class="All-offers">
+            <div class="home-page-card">
+                <div class="home-page-revenue-title">DS30 Index</div>
+                <div class="home-page-revenue">5,400</div>
+                <div class="home-page-percentage">+24%</div>
+                <div class="home-page-chart-container">
+                    <div class="home-page-chart-overlay"></div>
+                    <canvas id="revenueChart"></canvas>
+                </div>
+            </div>   
+
+            <div class="home-page-card">
+                <div class="home-page-revenue-title">GOLD (11.66 gm)</div>
+                <div class="home-page-revenue">৳ 116,898</div>
+                <div class="home-page-percentage">+44%</div>
+                <div class="home-page-chart-container">
+                    <div class="home-page-chart-overlay"></div>
+                    <canvas id="revenueChart"></canvas>
+                </div>
+            </div>  
+        </div>    
+
+
+        <div class="explore-container">
+        <header class="explore-header">
+            <h1>Explore</h1>
+            <p>Explore top funds by category</p>
+            <div class="search-bar">
+                <ion-icon name="search-outline">Life</ion-icon>
+                <input type="text" placeholder="Search 3000+ mutual funds">
+            </div>
+        </header>
+
+        <section class="explore-content">
+            <div class="explore-card">
+                <span class="explore-icon">
+                    <ion-icon name="bar-chart-outline" style="color: darkgoldenrod;"></ion-icon>
+                </span>                
+                <div>
+                    <h2>Ongoing NFOs</h2>
+                    <p>Explore open new fund offerings</p>
+                </div>
+            </div>
+            <div class="explore-card">
+                <span class="explore-icon">
+                    <ion-icon name="calculator-outline" style="color:gold"></ion-icon>
+                </span>
+                <div>
+                    <h2>Save taxes</h2>
+                    <p>Build wealth and save taxes</p>
+                </div>
+            </div>
+            <div class="explore-card">
+                <span class="explore-icon">
+                    <ion-icon name="cash-outline" style="color: darkseagreen;"></ion-icon>
+                </span>
+                <div>
+                    <h2>Low-cost index funds</h2>
+                    <p>Long term wealth creation at low cost</p>
+                </div>
+            </div>
+            <div class="explore-card">
+                <span class="explore-icon">
+                    <ion-icon name="flame-outline" style="color:darkkhaki;"></ion-icon>
+                </span>
+                <div>
+                    <h2>Smart beta</h2>
+                    <p>Hybrid of active and passive</p>
+                </div>
+            </div>
+            <div class="explore-card">
+                <span class="explore-icon">
+                    <ion-icon name="shapes-outline" style="color: bisque;"></ion-icon>
+                </span>
+                <div>
+                    <h2>Equity + Debt</h2>
+                    <p>Stable growth</p>
+                </div>
+            </div>
+            <div class="explore-card">
+                <span class="explore-icon">
+                    <ion-icon name="wallet-outline" style="color: cadetblue;"></ion-icon>
+                </span>
+                <div>
+                    <h2>Alternatives to bank FDs</h2>
+                    <p>Tax efficient; better returns than FDs</p>
+                </div>
+            </div>
+            <div class="video-section-container">
+                <div class="video-section">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRD6pBWgIPmztIjZKF1WVXRfQaV-QPrJCZULweuhJST1cgvtcaqAMeT6x43&s=10" alt="Basics of mutual funds">
+                    <div class="video-info">
+                        <h2>Basics of mutual funds</h2>
+                        <p>13 lessons on the basics of mutual funds that every investor must know</p>
+                    </div>
+                </div>
+                <div class="video-section">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRD6pBWgIPmztIjZKF1WVXRfQaV-QPrJCZULweuhJST1cgvtcaqAMeT6x43&s=10" alt="Basics of mutual funds">
+                    <div class="video-info">
+                        <h2>Basics of mutual funds</h2>
+                        <p>13 lessons on the basics of mutual funds that every investor must know</p>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+    </div>
+
+    <footer class="footer">
+
+        <div class="registration">
+            <p>eBiniyog</p>
+            <p>Trade Licence Registration: INZ000031633</p>
+            <a href="#">Terms & Conditions</a>
+        </div>
+
+    </footer>
+
+    </div>
         `)
-        console.log("THIS IS AFTER REND DNDND")
-        $("#fin-advise-btn").click(function () { 
-            $(".overlay").addClass("active")
-            .html(`<div data-tf-live="01HTQPX2J1G2949SDM3MKFNRF5">
-            </div><script src="//embed.typeform.com/next/embed.js"></script>
-            <button id="close-typeform" onclick="closeOverlay()">Close</button>`);       
-        });
-        // if(data0){
-        //     console.log('trueeee');
-        //     var data = JSON.parse(data0) 
-        // }else {
-        //     var data = JSON.parse(localStorage.getItem('dsedata'))
-        // }
-        // console.log(JSON.parse(data0))
-        // console.log(data)
 
-        data = [
-        { 'name' : 'GOLD' , 'change' : 45 , 'trade' : 340  , 'ltp' : '10,185' , 'changeP' : 3  } ,
-        {'name' : 'SanchayPatra' , 'change' : 45 , 'trade' : 340  , 'ltp' : '11.5%' , 'changeP' : 3  } ,
-        {'name' : 'BOND' , 'change' : 45 , 'trade' : 340  , 'ltp' : '13%' , 'changeP' : 3  } ,
-        {'name' : 'MutualFund' , 'change' : 45 , 'trade' : 340  , 'ltp' : '7%' , 'changeP' : 15  },
-        {'name' : 'DS30' , 'change' : 45 , 'trade' : 340  , 'ltp' : '17%' , 'changeP' : -13  } ] 
-        var count = 0
-        for (var i in data)
-        {
-            var changeval = (data[`${i}`].change < 0)? `${data[`${i}`].change}` : `+${data[`${i}`].change}`
-            var color = data[`${i}`].changeP < 0 ? 'red' : 'green' ;
-            if(data[`${i}`].changeP==0){color ="blue"} ;
+     // Generate random data for the chart
+     const labels = Array.from({ length: 30 }, (_, i) => `Day ${i + 1}`);
+     const data = Array.from({ length: 30 }, () => Math.floor(Math.random() * 1000));
+     const ctx = document.getElementById('revenueChart').getContext('2d');
+     const revenueChart = new Chart(ctx, {
+         type: 'line',
+         data: {
+             labels: labels,
+             datasets: [{
+                 label: 'Revenue',
+                 data: data,
+                 radius: 0,
+                 borderColor: 'green',
+                 backgroundColor: 'white',
+                 fill: false,
+                 tension: 0.1
+             }]
+         },
+         options: {
+             responsive: true,
+             maintainAspectRatio: true,
+             scales: {
+                 x: {display: false},
+                 y: {display: false}
+             },
+             plugins: {
+                 legend: {display: false}
+             }
+         }
+     });    
 
-            $("#stocklist").append(`
-
-            <div class="flex main" id="${data[i].name}">
-                <div id="name" class="name" style="cursor: pointer;" onclick="window.location='#/eachstock/${data[i].name}'">
-                <p>${data[i].name}</p>
-                </div>
-            
-                <div class="chart" id="chart${count}" onclick="alert('This is a chart made from last 15 days')"></div>
-
-                <div id="icon"><i id="fav${data[i].name}" class="fas fa-star ${localStorage.fav? (JSON.parse(localStorage.fav).includes(data[i].name)?'checked':'' ):''}" onclick="fav('${data[i].name}')"></i></div>
-                <div id="data">
-                <p class="${color}">${data[`${i}`].ltp}</p>
-                <p class="${color}1 change">${changeval} , ${data[`${i}`].changeP}%</p>
-                </div>
-            </div>            
-            `)
-
-
-       var dataDSE_forChart = [14,13,11,13,9,8,10,12,11,10,13,12,10,9,11,13,14,15,17]
-       var myarr = Array(dataDSE_forChart.length).fill().map((x,i)=>i) ;
-       var datachart =  { labels: myarr ,  series: [{className:`stroke${color}`,  meta:"OK", data: utils.removeZero(dataDSE_forChart) } ]}
-         
-       new Chartist.Line(`#chart${count}`, datachart , 
-       {
-           showArea: true,
-           width: 140,
-           showPoint:false,
-           axisX:{  
-               showGrid : false ,
-               showLabel : false , 
-               offset : 15,
-               labelInterpolationFnc: function(value, index) {
-                   return index % 10 === 0 ? value : null;
-               }
-           } ,
-           axisY : {
-               showGrid : true ,
-               showLabel : true ,
-               }
-           });
-
-            count = count +1 ;
-        }
     },
 
     rend : async () => {

@@ -1,179 +1,138 @@
+/* Import Be Vietnam Pro font */
 @import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+/* BODY and Global tags */
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-.desktop-screen-header {
-    font-family: "Be Vietnam Pro", sans-serif;
+    /* padding-top: 50px; */
     background-color: #18212a;
+    /* font-family: "Be Vietnam Pro", sans-serif; */
     color: white;
-    padding: 10px 0;
-    border-bottom: 1px solid #e0e0e0;
 }
 
-.desktop-screen-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+.explore-container {
+    background-color: #18212a;
+    font-family: "Be Vietnam Pro", sans-serif;
+    color: white;
+    max-width: 500px;
+    margin: auto;
+    padding: 20px;
 }
 
-.desktop-screen-logo a {
+.explore-header {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.explore-header h1 {
     margin: 0;
-    font-size: 30px;
+    font-size: 24px;
     font-weight: bold;
 }
 
-.desktop-screen-nav ul {
-    font-family: "Be Vietnam Pro", sans-serif;
-    list-style: none;
-    margin: 0;
-    padding: 0;
+.explore-header p {
+    margin: 5px 0;
+    color: #777;
+}
+
+.search-bar {
     display: flex;
-}
-
-.desktop-screen-nav ul li {
-    margin-left: 20px;
-}
-
-.desktop-screen-nav ul li a {
-    color: white;
-    text-decoration: none;
-    padding: 5px 10px;
-    transition: background-color 0.3s;
-}
-
-.desktop-screen-nav ul li a:hover {
+    align-items: center;
     background-color: #f0f0f0;
-    border-radius: 5px;
-}
-
-.desktop-screen-signup-button {
-    background-color: #00A551;
-    color: white;
-    padding: 10px 20px;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-}
-
-.desktop-screen-signup-button:hover {
-    background-color: #008f47;
-}
-
-.desktop-screen-hero {
-    font-family: "Be Vietnam Pro", sans-serif;
-
-    text-align: center;
-    padding: 100px 20px;
-}
-
-.desktop-screen-hero-content {
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.desktop-screen-hero h2 {
-    font-size: 3em;
-    margin: 0 0 20px;
-}
-
-.desktop-screen-hero h2 .desktop-screen-highlight {
-    color: #00A551; /* Change to your brand color */
-}
-
-.desktop-screen-hero p {
-    font-size: 1.2em;
-    margin-bottom: 40px;
-}
-
-.desktop-screen-app-buttons {
-    margin: 20px 0;
-}
-
-.desktop-screen-app-buttons a {
-    display: inline-block;
-    margin: 0 10px;
-}
-
-.desktop-screen-app-buttons .desktop-screen-store-button {
-    width: 150px;
-}
-
-.desktop-screen-mobile-image img {
-    width: 100%;
-    max-width: 500px;
-    margin-top: 40px;
-}
-
-.desktop-screen-footer {
-    font-family: "Be Vietnam Pro", sans-serif;
-    background-color: #18212a;
-    color: white;
-    padding: 40px 20px;
-}
-
-.desktop-screen-footer-container {
-    display: flex;
-    justify-content: space-between;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.desktop-screen-footer-left, .desktop-screen-footer-middle, .desktop-screen-footer-right {
-    flex: 1;
-    margin: 0px 20px;
-}
-
-.desktop-screen-footer-left img.desktop-screen-footer-logo {
-    max-width: 150px;
-}
-
-.desktop-screen-footer-middle ul {
-    list-style: none;
-    padding: 0;
-}
-
-.desktop-screen-footer-middle ul li {
-    margin-bottom: 10px;
-}
-
-.desktop-screen-footer-middle ul li a {
-    color: white;
-    text-decoration: none;
-    transition: color 0.3s;
-}
-
-.desktop-screen-footer-middle ul li a:hover {
-    color: #00A551;
-}
-
-.desktop-screen-footer-right .desktop-screen-powered-by-logo {
-    max-width: 150px;
-    margin-bottom: 20px;
-}
-
-.desktop-screen-footer-right address {
-    font-style: normal;
-    line-height: 1.5;
-    margin-bottom: 20px;
-}
-
-.desktop-screen-footer p {
+    border-radius: 20px;
+    padding: 10px 15px;
+    box-shadow: inset 0 0 5px rgba(0,0,0,0.1);
     margin-top: 10px;
 }
 
-.desktop-screen-footer p a {
-    color: #00A551;
+.search-bar ion-icon {
+    color: #333;
+    font-size: 20px;
+    --ionicon-stroke-width: 76px;
+    margin-right: 10px;
+}
+
+.search-bar input {
+    border: none;
+    background: none;
+    outline: none;
+    width: calc(100% - 30px);
+    font-size: 16px;
+    color: #333;
+}
+
+.explore-card ion-icon {
+    font-size: 33px;
+    padding-right: 15px;
+}
+
+.explore-content .explore-card {
+    display: flex;
+    align-items: center;
+    background-color: #18212a;
+    margin: 10px 0;
+    padding-top: 25px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.explore-content .explore-card h2 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.explore-content .explore-card p {
+    margin: 5px 0 0;
+    color: #777;
+}
+
+.video-section-container {
+    display: flex;
+    overflow-x: scroll;
+}
+
+.video-section {
+    display: flex;
+    align-items: center;
+    background-color: #18212a;
+    margin: 10px 0;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    min-width: 400px;
+    margin-right: 10px;
+}
+
+.video-section img {
+    max-width: 100px;
+    border-radius: 5px;
+    margin-right: 15px;
+}
+
+.video-info h2 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.video-info p {
+    margin: 5px 0 0;
+    color: #777;
+}
+
+.footer {
+    font-family: "Be Vietnam Pro", sans-serif;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.footer .registration {
+    font-size: 12px;
+    color: #777;
+}
+
+.footer .registration a {
+    color: #333;
     text-decoration: none;
 }
 
-.desktop-screen-footer p a:hover {
-    text-decoration: underline;
-}
