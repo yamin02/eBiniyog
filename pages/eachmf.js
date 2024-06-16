@@ -63,8 +63,8 @@ module.exports.infotab =  {
             });
         
             $('.mf-nav button').on('click', function() {
-                $('.nav button.active').removeClass('active');
-                $(this).addClass('active');
+                $('.mf-active').removeClass('mf-active');
+                $(this).addClass('mf-active');
                 currentPeriod = $(this).data('period');
                 myChart.data.datasets[0].data = chartData[currentPeriod];
                 myChart.update();
@@ -75,7 +75,7 @@ module.exports.infotab =  {
                 $('#cagr-value').text(cagrValues[selectedPeriod]);
             });
         
-            $('.fa-info-circle').on('click', function() {
+            $('.terms-info').on('click', function() {
                 const infoType = $(this).data('info');
                 let infoText = '';
                 if (infoType === 'exit-load') {
@@ -96,13 +96,15 @@ module.exports.infotab =  {
 
     topNavSet('back',"Fund Info") ;
 
-    $("#contents").html(`<div class="mf-container">
+    $("#contents").html(`
+    <div class="mf-container">
     <div class="mf-header">
         <img src="https://ucbstock.com.bd/wp-content/uploads/2020/11/cropped-ucbsbl_logo.png" alt="Logo">
         <h1>UCB AML FIRST MUTUAL FUND</h1>
     </div>
     <div class="mf-sub-header">Direct | Growth | Equity - ELSS</div>
     <div class="mf-main-content">
+
         <div class="mf-details">
             <div class="mf-nav-title">Current NAV (24th May 2024)</div>
             <div class="mf-price">৳ 60.33</div>
@@ -120,13 +122,14 @@ module.exports.infotab =  {
                 <div class="mf-item">Min. investment<span>₹500.0</span></div>
             </div>
             <div class="mf-row">
-                <div class="mf-item">Exit load <a class="fas fa-info-circle" data-info="exit-load"></a>
+                <div class="mf-item">Exit load <ion-icon class='terms-info' name="information-circle-outline" data-info="expense-ratio" ></ion-icon>
                 <span>0.0%</span> </div>
-                <div class="mf-item">Expense ratio <a class="fas fa-info-circle" data-info="expense-ratio"></a>
+                <div class="mf-item">Expense ratio <ion-icon class='terms-info' name="information-circle-outline" data-info="expense-ratio"></ion-icon> 
                 <span>0.91%</span> </div>
             </div>
             <button class="mf-login">Login to invest</button>
         </div>
+
         <div class="mf-chart-container">
             <canvas id="mf-myChart" class="mf-chart"></canvas>
             <div class="mf-nav">
@@ -145,7 +148,112 @@ module.exports.infotab =  {
     <p id="popup-content"></p>
     <button id="closePopupBtn">Close</button>
 </div>
-<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>`)
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+
+
+<div class="fund-container">
+<div class="fund-header">
+<div class="mf-details">
+            <div class="mf-row">
+                <div class="mf-item">AUM <span id="mf-cagr-value">102.45 cr</span></div>
+                <div class="mf-item">Risk Involved<span>High</span></div>
+            </div>
+            <div class="mf-row">
+                <div class="mf-item">AUM <span id="mf-cagr-value">102.45 cr</span></div>
+                <div class="mf-item">Risk Involved<span>High</span></div>
+            </div>
+            <div class="mf-row">
+                <div class="mf-item">Inception<span>22 Aug,2022</span> </div>
+                <div class="mf-item">Custodian<span>Brac Bank Ltd</span> </div>
+            </div>
+        </div>
+</div>
+
+<div class="fund-manager">
+    <img src="https://businesspostbd.com/files/thumbs/daily-media/2022/07/14/964x551/36.webp" alt="Mirae Asset">
+    <div>Fund manager <br> <a> Mr. Neelesh Surana</a> </div>
+</div>
+
+<div class="fund-sectors">
+    <h2>Sectors</h2>
+    <ul id="fund-sector-list">
+        <li>
+            <span>Financials</span>
+            <span class="allocation" data-allocation="20.39">20.39%</span>
+        </li>
+        <li>
+            <span>Finance - Banks - Private Sector</span>
+            <span class="allocation" data-allocation="8.91">8.91%</span>
+        </li>
+        <li>
+            <span>Information Technology</span>
+            <span class="allocation" data-allocation="8.15">8.15%</span>
+        </li>
+        <li>
+            <span>Industrials</span>
+            <span class="allocation" data-allocation="7.84">7.84%</span>
+        </li>
+        <li class="hidden">
+            <span>Energy</span>
+            <span class="allocation" data-allocation="6.48">6.48%</span>
+        </li>
+        <li class="hidden">
+            <span>Consumer Discretionary</span>
+            <span class="allocation" data-allocation="8.85">8.85%</span>
+        </li>
+        <li class="hidden">
+            <span>Debt</span>
+            <span class="allocation" data-allocation="8.48">8.48%</span>
+        </li>
+        <li class="hidden">
+            <span>Treps/Reverse Repo</span>
+            <span class="allocation" data-allocation="7.87">7.87%</span>
+        </li>
+    </ul>
+    <button id="toggle-sectors">View all</button>
+</div>
+
+<div class="fund-sectors">
+    <h2>Holdings</h2>
+    <ul id="fund-sector-list">
+        <li>
+            <span>Brac Bank</span>
+            <span class="allocation" data-allocation="20.39">20.39%</span>
+        </li>
+        <li>
+            <span>BATBC </span>
+            <span class="allocation" data-allocation="8.91">8.91%</span>
+        </li>
+        <li>
+            <span>Information Technology</span>
+            <span class="allocation" data-allocation="8.15">8.15%</span>
+        </li>
+        <li>
+            <span>Industrials</span>
+            <span class="allocation" data-allocation="7.84">7.84%</span>
+        </li>
+        <li class="hidden">
+            <span>Energy</span>
+            <span class="allocation" data-allocation="6.48">6.48%</span>
+        </li>
+        <li class="hidden">
+            <span>Consumer Discretionary</span>
+            <span class="allocation" data-allocation="8.85">8.85%</span>
+        </li>
+        <li class="hidden">
+            <span>Debt</span>
+            <span class="allocation" data-allocation="8.48">8.48%</span>
+        </li>
+        <li class="hidden">
+            <span>Treps/Reverse Repo</span>
+            <span class="allocation" data-allocation="7.87">7.87%</span>
+        </li>
+    </ul>
+    <button id="toggle-sectors">View all</button>
+</div>
+</div>
+
+`)
   }
 
 }

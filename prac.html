@@ -1,118 +1,81 @@
 <!DOCTYPE html>
-
 <html lang="en">
 
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
-    <title>Mutual Funds App</title>
-<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-
+    <title>Mutual Fund Details</title>
     <link rel="stylesheet" href="prac.css">
-
-
 </head>
 
 <body>
-    <div class="explore-container">
-        <header class="explore-header">
-            <h1>Explore</h1>
-            <p>Explore top funds by category</p>
-            <div class="search-bar">
-                <ion-icon name="search-outline">Life</ion-icon>
-                <input type="text" placeholder="Search 3000+ mutual funds">
-            </div>
-        </header>
-
-        <section class="explore-content">
-            <div class="explore-card">
-                <span class="explore-icon">
-                    <ion-icon name="bar-chart-outline" style="color: darkgoldenrod;"></ion-icon>
-                </span>                
+    <div class="fund-container">
+        <div class="fund-header">
+            <div class="fund-details">
                 <div>
-                    <h2>Ongoing NFOs</h2>
-                    <p>Explore open new fund offerings</p>
+                    <span class="label">AUM</span>
+                    <span>₹22471.76Cr</span>
                 </div>
-            </div>
-            <div class="explore-card">
-                <span class="explore-icon">
-                    <ion-icon name="calculator-outline" style="color:gold"></ion-icon>
-                </span>
                 <div>
-                    <h2>Save taxes</h2>
-                    <p>Build wealth and save taxes</p>
+                    <span class="label">Lock-in period</span>
+                    <span>3 years</span>
                 </div>
-            </div>
-            <div class="explore-card">
-                <span class="explore-icon">
-                    <ion-icon name="cash-outline" style="color: darkseagreen;"></ion-icon>
-                </span>
                 <div>
-                    <h2>Low-cost index funds</h2>
-                    <p>Long term wealth creation at low cost</p>
+                    <span class="label">Risk involved</span>
+                    <span>Very High</span>
                 </div>
             </div>
-            <div class="explore-card">
-                <span class="explore-icon">
-                    <ion-icon name="flame-outline" style="color:darkkhaki;"></ion-icon>
-                </span>
-                <div>
-                    <h2>Smart beta</h2>
-                    <p>Hybrid of active and passive</p>
-                </div>
-            </div>
-            <div class="explore-card">
-                <span class="explore-icon">
-                    <ion-icon name="shapes-outline" style="color: bisque;"></ion-icon>
-                </span>
-                <div>
-                    <h2>Equity + Debt</h2>
-                    <p>Stable growth</p>
-                </div>
-            </div>
-            <div class="explore-card">
-                <span class="explore-icon">
-                    <ion-icon name="wallet-outline" style="color: cadetblue;"></ion-icon>
-                </span>
-                <div>
-                    <h2>Alternatives to bank FDs</h2>
-                    <p>Tax efficient; better returns than FDs</p>
-                </div>
-            </div>
-            <div class="video-section-container">
-                <div class="video-section">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRD6pBWgIPmztIjZKF1WVXRfQaV-QPrJCZULweuhJST1cgvtcaqAMeT6x43&s=10" alt="Basics of mutual funds">
-                    <div class="video-info">
-                        <h2>Basics of mutual funds</h2>
-                        <p>13 lessons on the basics of mutual funds that every investor must know</p>
-                    </div>
-                </div>
-                <div class="video-section">
-                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRD6pBWgIPmztIjZKF1WVXRfQaV-QPrJCZULweuhJST1cgvtcaqAMeT6x43&s=10" alt="Basics of mutual funds">
-                    <div class="video-info">
-                        <h2>Basics of mutual funds</h2>
-                        <p>13 lessons on the basics of mutual funds that every investor must know</p>
-                    </div>
-                </div>
-            </div>
-
-        </section>
-    </div>
-
-    <footer class="footer">
-
-        <div class="registration">
-            <p>eBiniyog</p>
-            <p>Trade Licence Registration: INZ000031633</p>
-            <a href="#">Terms & Conditions</a>
         </div>
 
-    </footer>
+        <div class="fund-manager">
+            <img src="https://businesspostbd.com/files/thumbs/daily-media/2022/07/14/964x551/36.webp" alt="Mirae Asset">
+            
+            <div>Fund Manager <br> <span>Mr. Neelesh Surana</span> </div>
+        </div>
 
+        <div class="fund-sectors">
+            <h2>Sectors</h2>
+            <ul id="fund-sector-list">
+                <li>
+                    <span>Financials</span>
+                    <span class="allocation" data-allocation="20.39">20.39%</span>
+                </li>
+                <li>
+                    <span>Finance - Banks - Private Sector</span>
+                    <span class="allocation" data-allocation="8.91">8.91%</span>
+                </li>
+                <li>
+                    <span>Information Technology</span>
+                    <span class="allocation" data-allocation="8.15">8.15%</span>
+                </li>
+                <li>
+                    <span>Industrials</span>
+                    <span class="allocation" data-allocation="7.84">7.84%</span>
+                </li>
+                <li class="hidden">
+                    <span>Energy</span>
+                    <span class="allocation" data-allocation="6.48">6.48%</span>
+                </li>
+                <li class="hidden">
+                    <span>Consumer Discretionary</span>
+                    <span class="allocation" data-allocation="8.85">8.85%</span>
+                </li>
+                <li class="hidden">
+                    <span>Debt</span>
+                    <span class="allocation" data-allocation="8.48">8.48%</span>
+                </li>
+                <li class="hidden">
+                    <span>Treps/Reverse Repo</span>
+                    <span class="allocation" data-allocation="7.87">7.87%</span>
+                </li>
+            </ul>
+            <button id="toggle-sectors">View all</button>
+        </div>
+    </div>
+
+    <script src="prac.js"></script>
 </body>
 
 </html>

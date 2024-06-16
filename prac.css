@@ -1,138 +1,124 @@
-/* Import Be Vietnam Pro font */
-@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
-/* BODY and Global tags */
 body {
-    /* padding-top: 50px; */
-    background-color: #18212a;
-    /* font-family: "Be Vietnam Pro", sans-serif; */
-    color: white;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fa;
 }
 
-.explore-container {
-    background-color: #18212a;
-    font-family: "Be Vietnam Pro", sans-serif;
-    color: white;
-    max-width: 500px;
-    margin: auto;
+
+.fund-container {
+    max-width: 400px;
+    margin: 20px auto;
     padding: 20px;
-}
-
-.explore-header {
-    text-align: left;
-    margin-bottom: 20px;
-}
-
-.explore-header h1 {
-    margin: 0;
-    font-size: 24px;
-    font-weight: bold;
-}
-
-.explore-header p {
-    margin: 5px 0;
-    color: #777;
-}
-
-.search-bar {
-    display: flex;
-    align-items: center;
-    background-color: #f0f0f0;
-    border-radius: 20px;
-    padding: 10px 15px;
-    box-shadow: inset 0 0 5px rgba(0,0,0,0.1);
-    margin-top: 10px;
-}
-
-.search-bar ion-icon {
-    color: #333;
-    font-size: 20px;
-    --ionicon-stroke-width: 76px;
-    margin-right: 10px;
-}
-
-.search-bar input {
-    border: none;
-    background: none;
-    outline: none;
-    width: calc(100% - 30px);
-    font-size: 16px;
-    color: #333;
-}
-
-.explore-card ion-icon {
-    font-size: 33px;
-    padding-right: 15px;
-}
-
-.explore-content .explore-card {
-    display: flex;
-    align-items: center;
+    color: white;
     background-color: #18212a;
-    margin: 10px 0;
-    padding-top: 25px;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-
-.explore-content .explore-card h2 {
-    margin: 0;
-    font-size: 18px;
-    font-weight: bold;
-}
-
-.explore-content .explore-card p {
-    margin: 5px 0 0;
-    color: #777;
-}
-
-.video-section-container {
-    display: flex;
-    overflow-x: scroll;
-}
-
-.video-section {
-    display: flex;
-    align-items: center;
-    background-color: #18212a;
-    margin: 10px 0;
-    padding: 15px;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    min-width: 400px;
-    margin-right: 10px;
-}
-
-.video-section img {
-    max-width: 100px;
-    border-radius: 5px;
-    margin-right: 15px;
-}
-
-.video-info h2 {
-    margin: 0;
-    font-size: 18px;
-    font-weight: bold;
-}
-
-.video-info p {
-    margin: 5px 0 0;
-    color: #777;
-}
-
-.footer {
     font-family: "Be Vietnam Pro", sans-serif;
-    text-align: center;
-    margin-top: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.footer .registration {
-    font-size: 12px;
-    color: #777;
+.fund-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ddd;
 }
 
-.footer .registration a {
-    color: #333;
-    text-decoration: none;
+.fund-details {
+    display: flex;
+    flex-direction: column;
 }
 
+.fund-details div {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+.label {
+    font-weight: bold;
+}
+
+.fund-risk {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.risk-indicator {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.risk-label {
+    font-weight: bold;
+    color: #d9534f;
+}
+
+.fund-manager {
+    display: flex;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.fund-manager img {
+    height: 50px;
+    margin-right: 20px;
+}
+
+.fund-manager a {
+    margin-left: 20px;
+}
+
+.fund-sectors, .fund-holdings {
+    padding: 20px 0;
+    border-bottom: 1px solid #ddd;
+}
+
+.fund-sectors h2 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+#fund-sector-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#fund-sector-list li {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+}
+
+#fund-sector-list .hidden {
+    display: none;
+}
+
+.allocation {
+    font-weight: bold;
+    color: #337ab7;
+    position: relative;
+    text-align: end;
+}
+
+.allocation::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    height: 2px;
+    background-color: #337ab7;
+    width: 0;
+}
+
+#toggle-sectors {
+    background: none;
+    border: none;
+    color: #337ab7;
+    cursor: pointer;
+    padding: 0;
+    font-size: 1em;
+}
