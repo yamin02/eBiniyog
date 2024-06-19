@@ -1,4 +1,3 @@
-var api = require('../functions/api');
 
 
 module.exports.forum =  {

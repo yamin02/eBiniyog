@@ -421,12 +421,22 @@ body {
   padding-top: 20px;
 }
 
+.mf-buttons-div{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+.mf-btn {
+  margin: 12px !important;
+  width: 100% !important;
+}
+
 .mf-header {
   padding-bottom: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-bottom: 1px solid #e6e6e6;
+  border-bottom: 1px solid #e6e6e638;
   color: white;
   text-align: center;
 }
@@ -473,13 +483,13 @@ body {
 
 .mf-details .mf-price {
   font-size: 24px;
-  color: #ff5733;
+  color: #28a745 ;
   font-weight: 700;
 }
 
 .mf-details .mf-change {
   font-size: 14px;
-  color: #ff5733;
+  color: #28a745;
   font-weight: 400;
 }
 
@@ -540,7 +550,6 @@ body {
   justify-content: space-around;
   width: 80%;
   padding: 10px;
-  /* background-color: #ffffff; */
   border: 1.5px solid #e6e6e640;
   border-radius: 10px;
   margin-top: 20px;
@@ -550,26 +559,122 @@ body {
   background: none;
   border: none;
   font-size: 14px;
-  color: #007bff;
+  color: #28a745;
   font-weight: 700;
   cursor: pointer;
 }
+
 
 .mf-active {
-  color: #ff5733 !important;
+  color: white !important;
+}
+/* This is for the eachmf , mutual fund or fund page (second part) */
+
+.fund-container {
+  max-width: 400px;
+  padding: 20px;
+  color: white;
+  background-color: #18212a;
+  font-family: "Be Vietnam Pro", sans-serif;
 }
 
-.mf-login {
-  padding: 10px 20px;
-  background-color: #007bff;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  font-size: 16px;
-  font-weight: 700;
-  cursor: pointer;
-  margin-top: 20px;
+.fund-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #dddddd0f;
 }
+
+.fund-details {
+  flex: 5;
+  text-align: left;
+}
+
+.label {
+  font-weight: bold;
+}
+
+
+
+.fund-manager {
+  display: flex;
+  align-items: center;
+  padding: 20px 0;
+  border-bottom: 1px solid #dddddd0f;
+  font-size: 13px;
+  color: rgb(210, 210, 210);
+}
+
+.fund-manager img {
+  height: 50px;
+  margin-right: 30px;
+}
+
+.fund-manager div {
+  margin-left: 20px;
+}
+
+
+.fund-manager a {
+  font-size: 20px ;
+  font-weight: 700;
+}
+
+.fund-sectors, .fund-holdings {
+  padding: 20px 0;
+  border-bottom: 1px solid #dddddd0f;
+}
+
+.fund-sectors h2 {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+#fund-sector-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#fund-sector-list li {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+#fund-sector-list .hidden {
+  display: none;
+}
+
+.allocation {
+  font-weight: bold;
+  color: #28a745;
+  position: relative;
+  text-align: end;
+}
+
+.allocation::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  height: 2px;
+  background-color:#28a745;
+  ;
+  width: 0;
+}
+
+.toggle-sectors {
+  font-family: "Be Vietnam Pro", sans-serif;
+  background: none;
+  border: none;
+  color: #28a745;
+  cursor: pointer;
+  padding: 0;
+  font-size: 1em;
+}
+
 
 .launch-info {
   font-size: 12px;
@@ -1374,107 +1479,3 @@ body {
 }
 
 
-/* This is for the eachmf , mutual fund or fund page (second part) */
-
-.fund-container {
-  max-width: 400px;
-  padding: 20px;
-  color: white;
-  background-color: #18212a;
-  font-family: "Be Vietnam Pro", sans-serif;
-}
-
-.fund-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-bottom: 20px;
-  border-bottom: 1px solid #dddddd0f;
-}
-
-.fund-details {
-  flex: 5;
-  text-align: left;
-}
-
-.label {
-  font-weight: bold;
-}
-
-
-
-.fund-manager {
-  display: flex;
-  align-items: center;
-  padding: 20px 0;
-  border-bottom: 1px solid #dddddd0f;
-  font-size: 13px;
-  color: rgb(210, 210, 210);
-}
-
-.fund-manager img {
-  height: 50px;
-  margin-right: 30px;
-}
-
-.fund-manager div {
-  margin-left: 20px;
-}
-
-
-.fund-manager a {
-  font-size: 20px ;
-  font-weight: 700;
-}
-
-.fund-sectors, .fund-holdings {
-  padding: 20px 0;
-  border-bottom: 1px solid #dddddd0f;
-}
-
-.fund-sectors h2 {
-  font-size: 1.2em;
-  margin-bottom: 10px;
-}
-
-#fund-sector-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-#fund-sector-list li {
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 15px;
-}
-
-#fund-sector-list .hidden {
-  display: none;
-}
-
-.allocation {
-  font-weight: bold;
-  color: #91c7f5;
-  position: relative;
-  text-align: end;
-}
-
-.allocation::after {
-  content: '';
-  position: absolute;
-  bottom: -3px;
-  left: 0;
-  height: 2px;
-  background-color: #91c7f5;
-  width: 0;
-}
-
-#toggle-sectors {
-  background: none;
-  border: none;
-  color: #91c7f5;
-  cursor: pointer;
-  padding: 0;
-  font-size: 1em;
-}

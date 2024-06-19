@@ -30,10 +30,10 @@ module.exports.infotab =  {
                     datasets: [{
                         label: 'NAV',
                         data: chartData[currentPeriod],
-                        borderColor: '#ff5733',
-                        borderWidth: 2,
+                        borderColor: '#28a745',
+                        borderWidth: 6,
                         fill: false,
-                        tension: 0.1
+                        tension: 0.1,
                     }]
                 },
                 options: {
@@ -72,7 +72,7 @@ module.exports.infotab =  {
         
             $('#mf-cagr-period').on('change', function() {
                 const selectedPeriod = $(this).val();
-                $('#cagr-value').text(cagrValues[selectedPeriod]);
+                $('#mf-cagr-value').text(cagrValues[selectedPeriod]);
             });
         
             $('.terms-info').on('click', function() {
@@ -89,26 +89,59 @@ module.exports.infotab =  {
             });
         });
         
-
+        $(document).ready(function() {
+            const allocations = $('.allocation') ;
+            const max = Math.max(...allocations.map((_, el) => parseFloat($(el).data('allocation'))).get());
+            
+            allocations.each(function() {
+                const value = parseFloat($(this).data('allocation'));
+                $(this).css({
+                    'border-bottom': '3px solid #28a745',
+                    'width': `${(value / max) * 100 + 20}px`
+                });
+            });
+        })
+            $('.toggle-sectors').on( 'click' ,function() {
+                // e.preventDefault();
+                const hiddenItems = $(this).parent().find('.hidden');
+                if (hiddenItems.is(':hidden')) {
+                    hiddenItems.css('display', 'flex');
+                    $(this).text('Hide all');
+                } else {
+                    hiddenItems.css('display', 'none');
+                    $(this).text('View all');
+                }
+            });
+        
+        
     },
 
     rend : async () => {
 
     topNavSet('back',"Fund Info") ;
+    var mf_details = { 
+        'FundName' : 'Shanta Fixed Income Fund', 
+        'CAGR' : 12.45 , 'NavPrice' : 60.33 , 'NavChange' : 0.13 , 
+        'AUM' : 102.56 , 'Risk' : 'High' , 'Custodian' : 'BracBank',
+        'Sector' : [['Finance',20.4] , ['Information Technology', 8.15] , ['Industrial',7.84] , ['Private Equity' , 6.8] , ['Energy' , 5.4] , ['Insurance', 3.7] ],
+        'Holdings' : [['Brac Bank',20.4] , ['Genexil', 8.15] , ['BatBC',7.84] , ['Green Delta Insurace' , 6.8] , ['GP' , 5.4] , ['Robi', 3.7] ],
+        'Dividend' : [[2024, 11.23] , [2023 , 10.34] ],
+        'about' : 'Shanta Fixed Income Fund is a mutual fund scheme designed to generate stable returns at minimum risk for investors. It predominantly invests in high-rated fixed income securities (e.g., corporate bonds, government bonds, and money market instruments)',
+    }
 
-    $("#contents").html(`
-    <div class="mf-container">
+    var mfhtml = 
+    `<div class="mf-container">
     <div class="mf-header">
         <img src="https://ucbstock.com.bd/wp-content/uploads/2020/11/cropped-ucbsbl_logo.png" alt="Logo">
-        <h1>UCB AML FIRST MUTUAL FUND</h1>
+        <h1>${mf_details.FundName}</h1>
     </div>
     <div class="mf-sub-header">Direct | Growth | Equity - ELSS</div>
     <div class="mf-main-content">
 
         <div class="mf-details">
             <div class="mf-nav-title">Current NAV (24th May 2024)</div>
-            <div class="mf-price">৳ 60.33</div>
-            <div class="mf-change">-0.13%</div>
+            <div class="mf-price">৳ ${mf_details['NavPrice']}</div>
+            <div class="mf-change">-${mf_details['NavChange']}%</div>
             <br>
             <div class="mf-row">
                 <div class="mf-item">CAGR 
@@ -117,9 +150,9 @@ module.exports.infotab =  {
                         <option value="4">4 Years</option>
                         <option value="5" selected>5 Years</option>
                     </select>
-                    <span id="mf-cagr-value">+12.65%</span>
+                    <span id="mf-cagr-value">+${mf_details['CAGR']}%</span>
                 </div>
-                <div class="mf-item">Min. investment<span>₹500.0</span></div>
+                <div class="mf-item">Min. investment<span>৳ 5000.0</span></div>
             </div>
             <div class="mf-row">
                 <div class="mf-item">Exit load <ion-icon class='terms-info' name="information-circle-outline" data-info="expense-ratio" ></ion-icon>
@@ -127,7 +160,10 @@ module.exports.infotab =  {
                 <div class="mf-item">Expense ratio <ion-icon class='terms-info' name="information-circle-outline" data-info="expense-ratio"></ion-icon> 
                 <span>0.91%</span> </div>
             </div>
-            <button class="mf-login">Login to invest</button>
+            <div class='mf-buttons-div'> 
+                <button class="mf-btn" id='fin-advise-btn'>One-Time</button>
+                <button class="mf-btn" id='fin-advise-btn'>Monthly SIP</button>
+            </div>
         </div>
 
         <div class="mf-chart-container">
@@ -148,15 +184,12 @@ module.exports.infotab =  {
     <p id="popup-content"></p>
     <button id="closePopupBtn">Close</button>
 </div>
-<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
-
-
 <div class="fund-container">
 <div class="fund-header">
 <div class="mf-details">
             <div class="mf-row">
-                <div class="mf-item">AUM <span id="mf-cagr-value">102.45 cr</span></div>
-                <div class="mf-item">Risk Involved<span>High</span></div>
+                <div class="mf-item">AUM <span id="mf-cagr-value">${mf_details['AUM']} cr</span></div>
+                <div class="mf-item">Risk Involved<span>${mf_details['Risk']}</span></div>
             </div>
             <div class="mf-row">
                 <div class="mf-item">AUM <span id="mf-cagr-value">102.45 cr</span></div>
@@ -173,87 +206,36 @@ module.exports.infotab =  {
     <img src="https://businesspostbd.com/files/thumbs/daily-media/2022/07/14/964x551/36.webp" alt="Mirae Asset">
     <div>Fund manager <br> <a> Mr. Neelesh Surana</a> </div>
 </div>
-
-<div class="fund-sectors">
-    <h2>Sectors</h2>
-    <ul id="fund-sector-list">
-        <li>
-            <span>Financials</span>
-            <span class="allocation" data-allocation="20.39">20.39%</span>
-        </li>
-        <li>
-            <span>Finance - Banks - Private Sector</span>
-            <span class="allocation" data-allocation="8.91">8.91%</span>
-        </li>
-        <li>
-            <span>Information Technology</span>
-            <span class="allocation" data-allocation="8.15">8.15%</span>
-        </li>
-        <li>
-            <span>Industrials</span>
-            <span class="allocation" data-allocation="7.84">7.84%</span>
-        </li>
-        <li class="hidden">
-            <span>Energy</span>
-            <span class="allocation" data-allocation="6.48">6.48%</span>
-        </li>
-        <li class="hidden">
-            <span>Consumer Discretionary</span>
-            <span class="allocation" data-allocation="8.85">8.85%</span>
-        </li>
-        <li class="hidden">
-            <span>Debt</span>
-            <span class="allocation" data-allocation="8.48">8.48%</span>
-        </li>
-        <li class="hidden">
-            <span>Treps/Reverse Repo</span>
-            <span class="allocation" data-allocation="7.87">7.87%</span>
-        </li>
-    </ul>
-    <button id="toggle-sectors">View all</button>
+<br>
+<div class="fund-details">
+    <h3>About the fund</h3> <br>
+    <p>${mf_details['about']}</p>
 </div>
 
 <div class="fund-sectors">
-    <h2>Holdings</h2>
+   <h2>Sectors</h2> <br>
     <ul id="fund-sector-list">
-        <li>
-            <span>Brac Bank</span>
-            <span class="allocation" data-allocation="20.39">20.39%</span>
-        </li>
-        <li>
-            <span>BATBC </span>
-            <span class="allocation" data-allocation="8.91">8.91%</span>
-        </li>
-        <li>
-            <span>Information Technology</span>
-            <span class="allocation" data-allocation="8.15">8.15%</span>
-        </li>
-        <li>
-            <span>Industrials</span>
-            <span class="allocation" data-allocation="7.84">7.84%</span>
-        </li>
-        <li class="hidden">
-            <span>Energy</span>
-            <span class="allocation" data-allocation="6.48">6.48%</span>
-        </li>
-        <li class="hidden">
-            <span>Consumer Discretionary</span>
-            <span class="allocation" data-allocation="8.85">8.85%</span>
-        </li>
-        <li class="hidden">
-            <span>Debt</span>
-            <span class="allocation" data-allocation="8.48">8.48%</span>
-        </li>
-        <li class="hidden">
-            <span>Treps/Reverse Repo</span>
-            <span class="allocation" data-allocation="7.87">7.87%</span>
-        </li>
+    ${mf_details.Sector.map((i,index) => `<li class=${ index > 3 ? 'hidden' : ''}><span>${i[0]}</span><span class="allocation" data-allocation="${i[1]}">${i[1]}%</span></li>`).join(' ')}
     </ul>
-    <button id="toggle-sectors">View all</button>
-</div>
+    <button class="toggle-sectors">View all</button>
 </div>
 
-`)
+<div class="fund-sectors">
+    <h2>Holdings</h2> <br>
+    <ul id="fund-sector-list">
+    ${mf_details.Holdings.map((i,index) => `<li class=${ index > 3 ? 'hidden' : ''}><span>${i[0]}</span><span class="allocation" data-allocation="${i[1]}">${i[1]}%</span></li>`).join(' ')}
+    </ul>
+    <button class="toggle-sectors">View all</button>
+</div>
+<div class="fund-sectors">
+    <h2>Dividends</h2> <br>
+    <ul id="fund-sector-list">
+    ${mf_details.Dividend.map((i,index) => `<li class=${ index > 3 ? 'hidden' : ''}><span>${i[0]}</span><span class="allocation" data-allocation="${i[1]}">${i[1]}%</span></li>`).join(' ')}
+    </ul>
+</div>
+</div>`
+    $("#contents").html(mfhtml);
+
   }
 
 }
