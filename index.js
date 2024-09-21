@@ -26,6 +26,7 @@ const loader = async () => {
   const parseUrl = (request.resource ? `/${request.resource}` : '/' ) + (request.id? '/:id': '')
   var screen = screenurl[parseUrl];
   // Navs and other things added in prerender.js
+  window.scrollTo(0, 0);
   await screen.rend();
   await screen.afterRend();
   utils.hideloading();

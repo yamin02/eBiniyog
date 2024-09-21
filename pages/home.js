@@ -81,7 +81,7 @@ module.exports.HomePage =  {
         </header>
 
         <section class="explore-content">
-            <div class="explore-card">
+            <a class="explore-card" href="/#/eachmf">
                 <span class="explore-icon">
                     <ion-icon name="bar-chart-outline" style="color: darkgoldenrod;"></ion-icon>
                 </span>                
@@ -89,7 +89,7 @@ module.exports.HomePage =  {
                     <h2>Ongoing NFOs</h2>
                     <p>Explore open new fund offerings</p>
                 </div>
-            </div>
+            </a>
             <div class="explore-card">
                 <span class="explore-icon">
                     <ion-icon name="calculator-outline" style="color:gold"></ion-icon>
@@ -165,8 +165,7 @@ module.exports.HomePage =  {
 
     </footer>
 
-    </div>
-        `)
+    </div>`)
 
      // Generate random data for the chart
      const labels = Array.from({ length: 30 }, (_, i) => `Day ${i + 1}`);
